@@ -4,8 +4,10 @@
   max-width: 980px;
   margin: 60px auto;
   padding: 28px;
-  background: rgba(255,255,255,0.9);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(var(--blanc-rgb), 0.95));
   border-radius: 18px;
+  box-shadow: 0 18px 60px rgba(var(--interview-rgb), 0.06);
+  border-left: 6px solid rgba(var(--interview-rgb), 0.12);
 }
 
 .context-page h1{ font-family: 'LOST LATE', 'Cinzel', serif; color: var(--interview); }

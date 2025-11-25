@@ -13,6 +13,8 @@
   --event-rgb: 231,165,102;
   --interview-rgb: 175,178,82;
   --blanc-rgb: 238,234,232;
+  --dice-rgb: 142,107,191;
+  --dice: #8E6BBF;
 
   /* Compatibility variables used across current styles */
   --bg: var(--blanc);
@@ -33,6 +35,9 @@ body {
   background: var(--bg);
   color: #111;
 }
+
+/* Make LOST LATE more present by forcing headings and nav logo to use it */
+h1, h2, h3, .logo-text, .nav-link { font-family: 'LOST LATE', 'Cinzel', serif; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

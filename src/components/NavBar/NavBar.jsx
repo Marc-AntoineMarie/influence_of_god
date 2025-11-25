@@ -10,7 +10,7 @@ const NavBar = () => {
   const pathToColor = {
     '/': 'blue',
     '/rules': 'orange',
-    '/dice': 'blue',
+    '/dice': 'dice',
     '/context': 'green',
     '/credits': 'red',
   };
@@ -32,24 +32,24 @@ const NavBar = () => {
   }, [location]);
 
   return (
-    <nav className={`floating-nav ${compact ? 'compact' : ''} color-${activeColor}`} aria-label="Main navigation" role="navigation">
+    <nav className={`floating-nav ${compact ? 'compact' : ''} color-${activeColor}`} aria-label="Navigation principale" role="navigation">
       <div className="nav-inner">
-        <div className="nav-left">
+            <div className="nav-left">
           <Link to="/" className="nav-logo">
             <div className="logo-mark">⚡</div>
-            <div className="logo-text">Influence of Gods</div>
+            <div className="logo-text">Influence des Dieux</div>
           </Link>
         </div>
 
         <div className={`nav-links ${open ? 'open' : ''} color-${activeColor}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Accueil</Link>
-          <Link to="/rules" className={`nav-link ${location.pathname === '/rules' ? 'active' : ''} highlight`}>Règles</Link>
-          <Link to="/dice" className={`nav-link ${location.pathname === '/dice' ? 'active' : ''}`}>Dé</Link>
-          <Link to="/context" className={`nav-link ${location.pathname === '/context' ? 'active' : ''}`}>Contexte</Link>
-          <Link to="/credits" className={`nav-link ${location.pathname === '/credits' ? 'active' : ''}`}>Crédits</Link>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current={location.pathname === '/' ? 'page' : undefined}>Accueil</Link>
+          <Link to="/rules" className={`nav-link ${location.pathname === '/rules' ? 'active' : ''}`} aria-current={location.pathname === '/rules' ? 'page' : undefined}>Règles</Link>
+          <Link to="/dice" className={`nav-link ${location.pathname === '/dice' ? 'active' : ''}`} aria-current={location.pathname === '/dice' ? 'page' : undefined}>Dé</Link>
+          <Link to="/context" className={`nav-link ${location.pathname === '/context' ? 'active' : ''}`} aria-current={location.pathname === '/context' ? 'page' : undefined}>Contexte</Link>
+          <Link to="/credits" className={`nav-link ${location.pathname === '/credits' ? 'active' : ''}`} aria-current={location.pathname === '/credits' ? 'page' : undefined}>Crédits</Link>
         </div>
 
-        <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)} aria-label="Open menu" aria-expanded={open}>
+        <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)} aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open}>
           <span />
           <span />
           <span />

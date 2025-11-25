@@ -9,7 +9,7 @@ const DiceModal = () => {
 
   return (
     <div className={`dice-modal-root ${open ? 'open' : ''}`}>
-      <button className="dice-btn" aria-label="Open dice popup" onClick={toggle}>
+      <button className="dice-btn" aria-label="Ouvrir le popup du dé" onClick={toggle}>
         🎲
       </button>
 
@@ -17,7 +17,7 @@ const DiceModal = () => {
         <div className="dice-popup">
           <div className="popup-header">
             <strong>Dé</strong>
-            <button onClick={toggle} aria-label="Close">✕</button>
+            <button onClick={toggle} aria-label="Fermer">✕</button>
           </div>
           <div className="popup-body">
             <Dice />

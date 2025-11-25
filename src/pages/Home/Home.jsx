@@ -11,7 +11,7 @@ const Home = () => {
       <section className="hero">
         <div className="hero-overlay" />
         <div className="hero-container">
-          <h1 className="hero-title">Influence of Gods</h1>
+          <h1 className="hero-title">Influence des Dieux</h1>
           <p className="hero-sub">Mythes antiques et design moderne — suivez les dieux.</p>
           <div className="hero-actions">
             <Link to="/rules" className="button primary">Lire les règles</Link>

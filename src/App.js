@@ -8,8 +8,12 @@ import Context from './pages/Context/Context';
 import DicePage from './pages/DicePage/DicePage';
 import NavBar from './components/NavBar/NavBar';
 import DiceModal from './components/DiceModal/DiceModal';
+import { useState } from 'react';
 
 function App() {
+  const [showIntro] = useState(false);
+  // Cloud intro removed: keep setShowIntro if needed for future toggles
+
   return (
     <Router>
       <div className="App">
@@ -21,6 +25,7 @@ function App() {
           <Route path="/context" element={<Context />} />
           <Route path="/dice" element={<DicePage />} />
         </Routes>
+        {showIntro && <div />}
         <DiceModal />
       </div>
     </Router>

@@ -50,7 +50,10 @@ Next steps / Suggestions:
 	- Add real logo asset and hero background illustration. Drop your card artwork in `public/aphrodite-card.png`. The home page loads `/aphrodite-card.png` as a hero card preview.
 		- Add real logo asset and hero background illustration. Drop your card artwork in `public/aphrodite-card.png` if you want a default hero card preview (optional).
 		- To use the LOST LATE font sitewide:
-			1. Place `LOST LATE.ttf` into `public/fonts/LOST LATE.ttf`.
+			1. Place the font file into `public/fonts/` (recommended file names):
+				- `LOST-LATE.woff2` (preferred)
+				- `LOST-LATE.woff`
+				- `LOST-LATE.ttf`
 			2. Then add the @font-face rule in `src/index.css` or `public/index.html`:
 
 	```css
@@ -63,7 +66,16 @@ Next steps / Suggestions:
 	}
 	```
 
-	If you do this, the site will use LOST LATE as the primary font; otherwise it will fall back to Inter and system fonts.
+	*Les nuages ont été retirés* — si tu veux les réactiver plus tard, dis-moi.
+		- The site now has a cloud intro animation (site appears from clouds). The animation runs on first visit; it can be skipped by pressing the "Passer" button or by swiping left/right on mobile.
+		- If you'd like the clouds to replay, clear sessionStorage or remove the `intro_skipped` key in your session storage.
+	## Cloud intro animation
+
+	- The site now has a cloud intro animation (site appears from clouds). The animation runs on first visit; it can be skipped by pressing the "Passer" button or by swiping left/right on mobile.
+	- If you'd like the clouds to replay, clear sessionStorage or remove the `intro_skipped` key in your session storage.
+
+	Dynamic font loader
+	- The site will try to detect LOST LATE automatically from `public/fonts/` at runtime and register it dynamically using multiple filename candidates (WOFF2/WOFF/TTF). If a compatible font is found the site will show the proper typography. If not found, the site falls back to Inter / system fonts.
 - Hook up actual rules/context text and images
 - Add card listing page and connect CardDeck
 - Add transitions and small UI polish (icons, less bright backgrounds)
