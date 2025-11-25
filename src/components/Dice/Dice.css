@@ -24,8 +24,8 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  background: linear-gradient(145deg, #ffffff, #f5f5f5);
-  border: 2px solid #ddd;
+  background: linear-gradient(145deg, rgba(var(--blanc-rgb, 238,234,232),1), rgba(255,255,255,0.98));
+  border: 2px solid rgba(var(--benediction-rgb,127,168,189),0.12);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@
   position: absolute;
   width: 22px;
   height: 22px;
-  background: #1a1a1a;
+  background: rgba(var(--benediction-rgb,127,168,189), 0.95);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 
@@ -75,14 +75,14 @@
 
 .dice-instruction {
   font-size: 18px;
-  color: #333;
+  color: var(--benediction);
   margin: 10px 0 0 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .dice-result {
   font-size: 24px;
-  color: #000;
+  color: var(--malediction);
   margin: 0;
   font-weight: bold;
 }

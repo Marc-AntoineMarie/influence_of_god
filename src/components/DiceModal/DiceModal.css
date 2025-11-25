@@ -4,7 +4,7 @@
   width:60px;
   height:60px;
   border-radius:999px;
-  background: linear-gradient(135deg,#d4956c,#c97b6f);
+  background: linear-gradient(135deg, var(--benediction), rgba(var(--benediction-rgb),0.9));
   color:white;
   border:none;
   cursor:pointer;
@@ -23,7 +23,8 @@
 }
 
 .popup-header{
-  display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid #eee;
+  display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid rgba(var(--benediction-rgb),0.08);
+  background: linear-gradient(90deg, rgba(var(--benediction-rgb),0.04), rgba(255,255,255,0));
 }
 
 .popup-body{ padding:12px; }

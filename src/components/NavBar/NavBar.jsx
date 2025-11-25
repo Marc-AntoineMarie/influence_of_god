@@ -7,6 +7,15 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
+  const pathToColor = {
+    '/': 'blue',
+    '/rules': 'orange',
+    '/dice': 'blue',
+    '/context': 'green',
+    '/credits': 'red',
+  };
+  const activeColor = pathToColor[location.pathname] || 'blue';
+
   useEffect(() => {
     const onScroll = () => {
       const scrolled = window.scrollY > 80;
@@ -23,7 +32,7 @@ const NavBar = () => {
   }, [location]);
 
   return (
-    <nav className={`floating-nav ${compact ? 'compact' : ''}`} aria-label="Main navigation" role="navigation">
+    <nav className={`floating-nav ${compact ? 'compact' : ''} color-${activeColor}`} aria-label="Main navigation" role="navigation">
       <div className="nav-inner">
         <div className="nav-left">
           <Link to="/" className="nav-logo">
@@ -32,12 +41,12 @@ const NavBar = () => {
           </Link>
         </div>
 
-        <div className={`nav-links ${open ? 'open' : ''}`}>
-          <Link to="/" className="nav-link">Accueil</Link>
-          <Link to="/rules" className="nav-link highlight">Règles</Link>
-          <Link to="/dice" className="nav-link">Dé</Link>
-          <Link to="/context" className="nav-link">Contexte</Link>
-          <Link to="/credits" className="nav-link">Crédits</Link>
+        <div className={`nav-links ${open ? 'open' : ''} color-${activeColor}`}>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Accueil</Link>
+          <Link to="/rules" className={`nav-link ${location.pathname === '/rules' ? 'active' : ''} highlight`}>Règles</Link>
+          <Link to="/dice" className={`nav-link ${location.pathname === '/dice' ? 'active' : ''}`}>Dé</Link>
+          <Link to="/context" className={`nav-link ${location.pathname === '/context' ? 'active' : ''}`}>Contexte</Link>
+          <Link to="/credits" className={`nav-link ${location.pathname === '/credits' ? 'active' : ''}`}>Crédits</Link>
         </div>
 
         <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)} aria-label="Open menu" aria-expanded={open}>

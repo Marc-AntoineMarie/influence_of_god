@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import CardPreview from '../../components/CardPreview/CardPreview';
 
 const Home = () => {
+  const [showCard, setShowCard] = useState(false);
+
   return (
     <main className="home-page">
       <section className="hero">
@@ -14,6 +17,17 @@ const Home = () => {
             <Link to="/rules" className="button primary">Lire les règles</Link>
             <Link to="/dice" className="button secondary">Lancer le dé</Link>
           </div>
+
+          {/* Optional card preview toggle */}
+          <div className="hero-actions">
+            <button className="button secondary" onClick={() => setShowCard(!showCard)}>{showCard ? 'Cacher la DA' : 'Voir la DA'}</button>
+          </div>
+
+          {showCard && (
+            <div className="hero-art">
+              <CardPreview />
+            </div>
+          )}
         </div>
       </section>
 

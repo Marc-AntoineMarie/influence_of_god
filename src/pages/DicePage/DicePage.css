@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 .dice-page .container{ max-width: 900px; margin: 60px auto; padding: 28px; }
+.dice-page h1{ color: var(--benediction); }
 .dice-center{ display:flex; justify-content:center; align-items:center; }

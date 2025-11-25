@@ -1,16 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap');
 
 :root{
-  --bg: #F5E6D3;
-  --accent: #7FA9B8;
-  --primary: #D4956C;
-  --olive: #9CA855;
-  --brick: #C97B6F;
+  /* Updated color tokens according to your palette */
+  --blanc: #eeeae8; /* light background */
+  --malediction: #c6694e; /* rouge */
+  --benediction: #7fa8bd; /* bleu - predominant */
+  --event: #e7a566; /* orange */
+  --interview: #afb252; /* vert */
+  /* Also expose RGB values for rgba usage */
+  --benediction-rgb: 127,168,189;
+  --malediction-rgb: 198,105,78;
+  --event-rgb: 231,165,102;
+  --interview-rgb: 175,178,82;
+  --blanc-rgb: 238,234,232;
+
+  /* Compatibility variables used across current styles */
+  --bg: var(--blanc);
+  --accent: var(--benediction);
+  --primary: var(--benediction);
+  --olive: var(--interview);
+  --brick: var(--malediction);
+  --nav-bg: rgba(255,255,255,0.8);
+  --shadow: rgba(30, 30, 30, 0.12);
 }
 
+/* If you want to use a local LOST LATE font: place the .ttf in public/fonts/ and add an @font-face rule. */
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'LOST LATE', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);

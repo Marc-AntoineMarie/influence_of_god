@@ -9,7 +9,9 @@
 }
 
 .rules-page h1, .rules-page h2, .rules-page h3{
-  font-family: 'Cinzel', serif;
+  font-family: 'LOST LATE', 'Cinzel', serif;
 }
+
+.rules-page h1{ color: var(--event); }
 
 .rules-page p{ font-family: 'Inter', sans-serif; }
