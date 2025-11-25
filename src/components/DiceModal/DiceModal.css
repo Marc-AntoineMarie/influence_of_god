@@ -1,0 +1,32 @@
+.dice-modal-root{ position:fixed; right:20px; bottom:20px; z-index:1500; }
+
+.dice-btn{
+  width:60px;
+  height:60px;
+  border-radius:999px;
+  background: linear-gradient(135deg,#d4956c,#c97b6f);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:26px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dice-popup{
+  margin-bottom:12px;
+  background:white;
+  border-radius:12px;
+  width:320px;
+  max-width: calc(100vw - 40px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  overflow:hidden;
+}
+
+.popup-header{
+  display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid #eee;
+}
+
+.popup-body{ padding:12px; }
+
+.dice-modal-root .dice-popup{ display:none; }
+.dice-modal-root.open .dice-popup{ display:block; }

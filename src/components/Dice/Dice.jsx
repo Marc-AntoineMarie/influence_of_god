@@ -9,14 +9,11 @@ const Dice = () => {
 
   const rollDice = () => {
     if (isRolling) return;
-    
     setIsRolling(true);
-    
     // Génère le résultat final AVANT l'animation
     const finalValue = Math.floor(Math.random() * 6) + 1;
     setValue(finalValue); // ← Important : on set la valeur AVANT l'animation
     setDisplayValue(finalValue);
-    
     // Arrête juste l'état "isRolling" après l'animation
     setTimeout(() => {
       setIsRolling(false);
@@ -42,9 +39,9 @@ const Dice = () => {
     <div className="dice-container">
       <div className="dice-scene">
         <motion.div
-          className="dice-cube" 
+          className="dice-cube"
           onClick={rollDice}
-         animate={isRolling ? {
+          animate={isRolling ? {
           rotateX: isRolling ? 720 + finalRotation.x : finalRotation.x,
           rotateY: isRolling ? 720 + finalRotation.y : finalRotation.y,
           z: [0],
@@ -62,34 +59,28 @@ const Dice = () => {
           <div className="dice-face dice-face-1">
             {renderDots(displayValue === 1 && isRolling ? displayValue : 1)}
           </div>
-          
           {/* Face 2 (derrière) */}
           <div className="dice-face dice-face-2">
             {renderDots(displayValue === 2 && isRolling ? displayValue : 2)}
           </div>
-          
           {/* Face 3 (droite) */}
           <div className="dice-face dice-face-3">
             {renderDots(displayValue === 3 && isRolling ? displayValue : 3)}
           </div>
-          
           {/* Face 4 (gauche) */}
           <div className="dice-face dice-face-4">
             {renderDots(displayValue === 4 && isRolling ? displayValue : 4)}
           </div>
-          
           {/* Face 5 (haut) */}
           <div className="dice-face dice-face-5">
             {renderDots(displayValue === 5 && isRolling ? displayValue : 5)}
           </div>
-          
           {/* Face 6 (bas) */}
           <div className="dice-face dice-face-6">
             {renderDots(displayValue === 6 && isRolling ? displayValue : 6)}
           </div>
         </motion.div>
       </div>
-      
       <p className="dice-instruction">
         {isRolling ? "🎲 Lancer en cours..." : "Cliquez sur le dé pour lancer"}
       </p>
@@ -100,7 +91,6 @@ const Dice = () => {
 
 const renderDots = (value) => {
   const dots = [];
-  
   const positions = {
     1: [[50, 50]],
     2: [[25, 25], [75, 75]],

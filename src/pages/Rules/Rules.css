@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+.rules-page .container{
+  max-width: 980px;
+  margin: 60px auto;
+  padding: 28px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 18px;
+}
+
+.rules-page h1, .rules-page h2, .rules-page h3{
+  font-family: 'Cinzel', serif;
+}
+
+.rules-page p{ font-family: 'Inter', sans-serif; }

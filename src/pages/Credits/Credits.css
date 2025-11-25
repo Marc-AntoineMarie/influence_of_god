@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+
+.credits-page .container{
+  max-width: 980px;
+  margin: 60px auto;
+  padding: 28px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+}
+
+.credits-page h1{ font-family: 'Cinzel', serif; }
