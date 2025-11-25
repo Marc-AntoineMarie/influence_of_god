@@ -12,13 +12,13 @@ const Dice = () => {
     
     setIsRolling(true);
     
-    // Génère le résultat final
+    // Génère le résultat final AVANT l'animation
     const finalValue = Math.floor(Math.random() * 6) + 1;
+    setValue(finalValue); // ← Important : on set la valeur AVANT l'animation
+    setDisplayValue(finalValue);
     
-    // Attend la fin de l'animation pour afficher le résultat
+    // Arrête juste l'état "isRolling" après l'animation
     setTimeout(() => {
-      setValue(finalValue);
-      setDisplayValue(finalValue);
       setIsRolling(false);
     }, 1500);
   };
@@ -42,11 +42,11 @@ const Dice = () => {
     <div className="dice-container">
       <div className="dice-scene">
         <motion.div
-          className="dice-cube"
+          className="dice-cube" 
           onClick={rollDice}
          animate={isRolling ? {
-          rotateX: 720, // 2 tours complets
-          rotateY: 720,
+          rotateX: isRolling ? 720 + finalRotation.x : finalRotation.x,
+          rotateY: isRolling ? 720 + finalRotation.y : finalRotation.y,
           z: [0],
         } : {
           rotateX: finalRotation.x,
@@ -54,7 +54,7 @@ const Dice = () => {
           z: 0,
         }}
         transition={{
-          duration: 1.5,
+          duration: isRolling ? 1.5 : 0,
           ease: "easeOut", // Ralentit à la fin naturellement
         }}
         >
