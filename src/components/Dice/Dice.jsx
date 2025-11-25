@@ -15,23 +15,12 @@ const Dice = () => {
     // Génère le résultat final
     const finalValue = Math.floor(Math.random() * 6) + 1;
     
-    // Change les valeurs rapidement pendant l'animation
-    let counter = 0;
-    const interval = setInterval(() => {
-      setDisplayValue(Math.floor(Math.random() * 6) + 1);
-      counter++;
-      if (counter > 15) {
-        clearInterval(interval);
-      }
-    }, 100);
-    
-    // Affiche le résultat final
+    // Attend la fin de l'animation pour afficher le résultat
     setTimeout(() => {
-      clearInterval(interval);
       setValue(finalValue);
       setDisplayValue(finalValue);
       setIsRolling(false);
-    }, 2000);
+    }, 1500);
   };
 
   // Rotations pour afficher la bonne face en fonction de la valeur
@@ -55,18 +44,19 @@ const Dice = () => {
         <motion.div
           className="dice-cube"
           onClick={rollDice}
-          animate={isRolling ? {
-            rotateX: [0, 720, 1080, finalRotation.x],
-            rotateY: [0, 720, 1080, finalRotation.y],
-            z: [0, 50, 100, 50, 0],
-          } : {
-            rotateX: finalRotation.x,
-            rotateY: finalRotation.y,
-          }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-          }}
+         animate={isRolling ? {
+          rotateX: 720, // 2 tours complets
+          rotateY: 720,
+          z: [0],
+        } : {
+          rotateX: finalRotation.x,
+          rotateY: finalRotation.y,
+          z: 0,
+        }}
+        transition={{
+          duration: 1.5,
+          ease: "easeOut", // Ralentit à la fin naturellement
+        }}
         >
           {/* Face 1 (devant) */}
           <div className="dice-face dice-face-1">
