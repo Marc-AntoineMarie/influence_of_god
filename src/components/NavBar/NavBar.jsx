@@ -47,7 +47,7 @@ const NavBar = () => {
         <div className={`nav-links ${open ? 'open' : ''} color-${activeColor}`}>
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current={location.pathname === '/' ? 'page' : undefined}>Home</Link>
           <Link to="/rules" className={`nav-link ${location.pathname === '/rules' ? 'active' : ''}`} aria-current={location.pathname === '/rules' ? 'page' : undefined}>Rules</Link>
-          <Link to="/dice" className={`nav-link ${location.pathname === '/dice' ? 'active' : ''}`} aria-current={location.pathname === '/dice' ? 'page' : undefined}>Dice</Link>
+          {/* <Link to="/dice" className={`nav-link ${location.pathname === '/dice' ? 'active' : ''}`} aria-current={location.pathname === '/dice' ? 'page' : undefined}>Dice</Link> */}
           <Link to="/context" className={`nav-link ${location.pathname === '/context' ? 'active' : ''}`} aria-current={location.pathname === '/context' ? 'page' : undefined}>Context</Link>
           <Link to="/credits" className={`nav-link ${location.pathname === '/credits' ? 'active' : ''}`} aria-current={location.pathname === '/credits' ? 'page' : undefined}>Credits</Link>
         </div>
