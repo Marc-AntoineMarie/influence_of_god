@@ -102,13 +102,6 @@
   color: #111;
 }
 
-.nav-link.highlight {
-  /* keep this for possible future explicit highlight; but make subtle */
-  background: linear-gradient(180deg, rgba(var(--event-rgb, 231,165,102),0.06), rgba(var(--event-rgb, 231,165,102),0.04));
-  border: 1px solid rgba(var(--event-rgb, 231,165,102),0.06);
-  color: #111;
-}
-
 /* Active state color variants based on page - no background, just color and underline */
 .nav-links.color-blue .nav-link.active{ color: rgba(var(--benediction-rgb), 1); }
 .nav-links.color-orange .nav-link.active{ color: rgba(var(--event-rgb), 1); }
