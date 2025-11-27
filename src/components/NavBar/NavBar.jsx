@@ -35,7 +35,7 @@ const NavBar = () => {
   return (
     <nav className={`floating-nav ${compact ? 'compact' : ''} color-${activeColor}`} aria-label="Main navigation" role="navigation">
       <div className="nav-inner">
-            <div className="nav-left" aria-hidden>
+        <div className="nav-left" aria-hidden>
           {/* left placeholder - we keep it for possible left actions */}
         </div>
         <div className="nav-center">

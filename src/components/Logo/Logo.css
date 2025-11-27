@@ -4,8 +4,7 @@
 .logo-text.visible{opacity:1;visibility:visible}
 
 /* A small variant for compact nav use */
-.logo-root.compact .logo-image{height:24px}
-.logo-root.compact .logo-text{font-size:16px}
+.logo-root.compact .logo-image{height:44px}
 
 /* hero specific sizing - add .logo-hero class to the component to use this */
 .logo-root.logo-hero{display:block;max-width:min(70vw,640px);width:100%;margin:0 auto}

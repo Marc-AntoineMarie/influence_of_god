@@ -1,33 +1,133 @@
-.dice-modal-root{ position:fixed; right:20px; bottom:20px; z-index:1500; }
-
-.dice-btn{
-  width:60px;
-  height:60px;
-  border-radius:999px;
-  background: linear-gradient(135deg, var(--dice), rgba(var(--dice-rgb),0.9));
-  color:white;
-  border:none;
-  cursor:pointer;
-  font-size:26px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.dice-modal-root { 
+  position: fixed; 
+  right: 0; 
+  top: 60%; 
+  transform: translateY(-50%);
+  z-index: 1500; 
 }
 
-.dice-popup{
-  margin-bottom:12px;
-  background:white;
-  border-radius:12px;
-  width:320px;
-  max-width: calc(100vw - 40px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  overflow:hidden;
+/* Barre discrète sur le côté */
+.dice-btn {
+  width: 48px;
+  height: 80px;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  background: linear-gradient(180deg, var(--dice), rgba(var(--dice-rgb),0.88));
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 280ms ease;
+  opacity: 0.7;
+  padding-right: 4px;
 }
 
-.popup-header{
-  display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid rgba(var(--benediction-rgb),0.08);
-  background: linear-gradient(90deg, rgba(var(--benediction-rgb),0.04), rgba(255,255,255,0));
+.dice-btn:hover {
+  opacity: 1;
+  width: 56px;
+  box-shadow: -6px 0 24px rgba(var(--dice-rgb),0.2);
 }
 
-.popup-body{ padding:12px; }
+.dice-modal-root.open .dice-btn {
+  border-radius: 0;
+  opacity: 1;
+}
 
-.dice-modal-root .dice-popup{ display:none; }
-.dice-modal-root.open .dice-popup{ display:block; }
+/* Panel qui glisse depuis la droite */
+.dice-popup {
+  position: fixed;
+  right: -360px;
+  top: 0;
+  height: 100vh;
+  width: 360px;
+  max-width: 85vw;
+  background: white;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+  transition: right 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1500;
+}
+
+.dice-modal-root.open .dice-popup {
+  right: 0;
+}
+
+.popup-header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px 24px; 
+  border-bottom: 1px solid rgba(var(--dice-rgb),0.12);
+  background: linear-gradient(135deg, rgba(var(--dice-rgb),0.06), rgba(255,255,255,0));
+  flex-shrink: 0;
+}
+
+.popup-header strong {
+  font-size: 1.2rem;
+  color: var(--dice);
+}
+
+.popup-header button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(var(--dice-rgb),0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--dice);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 180ms ease;
+}
+
+.popup-header button:hover {
+  background: rgba(var(--dice-rgb),0.18);
+  transform: rotate(90deg);
+}
+
+.popup-body { 
+  padding: 24px; 
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Overlay subtil quand le panel est ouvert */
+.dice-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1499;
+  animation: fadeIn 400ms ease;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dice-btn {
+    width: 40px;
+    height: 70px;
+    font-size: 20px;
+  }
+  
+  .dice-btn:hover {
+    width: 44px;
+  }
+  
+  .popup-body {
+    padding: 16px;
+  }
+}

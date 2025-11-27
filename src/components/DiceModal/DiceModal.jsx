@@ -13,17 +13,19 @@ const DiceModal = () => {
         🎲
       </button>
 
-      {open && (
-        <div className="dice-popup">
-          <div className="popup-header">
-            <strong>Dice</strong>
-            <button onClick={toggle} aria-label="Close">✕</button>
-          </div>
-          <div className="popup-body">
-            <Dice />
-          </div>
+      {/* Enlevez le {open &&} pour garder la popup dans le DOM */}
+      <div className="dice-popup">
+        <div className="popup-header">
+          <strong>Dice</strong>
+          <button onClick={toggle} aria-label="Close">✕</button>
         </div>
-      )}
+        <div className="popup-body">
+          <Dice />
+        </div>
+      </div>
+
+      {/* Overlay pour fermer en cliquant à l'extérieur */}
+      {open && <div className="dice-overlay" onClick={toggle} />}
     </div>
   );
 };
