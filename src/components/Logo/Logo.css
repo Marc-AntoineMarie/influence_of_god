@@ -1,5 +1,5 @@
 .logo-root{display:flex;align-items:center;gap:10px}
-.logo-image{display:block;height:34px;width:auto;max-width:220px;opacity:0;transform:translateY(-2px);transition:opacity .18s ease, transform .18s ease}
+.logo-image{display:block;height:44px;width:auto;max-width:220px;opacity:0;transform:translateY(-2px);transition:opacity .18s ease, transform .18s ease}
 .logo-image.visible{opacity:1;transform:none}
 .logo-text.visible{opacity:1;visibility:visible}
 
