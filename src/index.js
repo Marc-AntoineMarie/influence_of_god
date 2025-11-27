@@ -7,12 +7,16 @@ import reportWebVitals from './reportWebVitals';
 // Dynamic font loader: looks in /public/fonts for LOST-LATE with common filenames.
 const tryLoadLostLate = async () => {
   const candidates = [
+    // Prefer web formats (no spaces)
     '/fonts/LOST-LATE.woff2',
     '/fonts/LOST-LATE.woff',
     '/fonts/LOST-LATE.ttf',
+    // Alternate names
     '/fonts/LOST_LATE.woff2',
     '/fonts/LOST_LATE.ttf',
+    // In case the file contains a space (not recommended), try both with a space and URL encoded
     '/fonts/LOST LATE.ttf',
+    '/fonts/LOST%20LATE.ttf',
   ];
   const getFormat = url => {
     if (url.endsWith('.woff2')) return 'woff2';
@@ -22,7 +26,11 @@ const tryLoadLostLate = async () => {
   };
   for (const url of candidates) {
     try {
-      const res = await fetch(url, { method: 'HEAD' });
+      // Prefer HEAD but if the server doesn't handle HEAD properly, fall back to GET
+      let res = await fetch(url, { method: 'HEAD' });
+      if (!res || !res.ok) {
+        res = await fetch(url);
+      }
       if (res && res.ok) {
         const fmt = getFormat(url);
         const style = document.createElement('style');

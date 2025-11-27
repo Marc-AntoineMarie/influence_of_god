@@ -10,9 +10,9 @@ const Dice = () => {
   const rollDice = () => {
     if (isRolling) return;
     setIsRolling(true);
-    // Génère le résultat final AVANT l'animation
+    // Generate the final result BEFORE the animation
     const finalValue = Math.floor(Math.random() * 6) + 1;
-    setValue(finalValue); // ← Important : on set la valeur AVANT l'animation
+    setValue(finalValue); // Important: set the value BEFORE the animation
     setDisplayValue(finalValue);
     // Arrête juste l'état "isRolling" après l'animation
     setTimeout(() => {
@@ -20,7 +20,7 @@ const Dice = () => {
     }, 1500);
   };
 
-  // Rotations pour afficher la bonne face en fonction de la valeur
+  // Rotations to show the correct face depending on the value
   const getFaceRotation = (faceValue) => {
     const rotations = {
       1: { x: 0, y: 0 },
@@ -82,9 +82,9 @@ const Dice = () => {
         </motion.div>
       </div>
       <p className="dice-instruction">
-        {isRolling ? "🎲 Lancer en cours..." : "Cliquez sur le dé pour lancer"}
+        {isRolling ? "🎲 Rolling…" : "Click the die to roll"}
       </p>
-      <p className="dice-result">Résultat : {value}</p>
+      {/* <p className="dice-result">Result: {value}</p> */}
     </div>
   );
 };

@@ -1,39 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import CardPreview from '../../components/CardPreview/CardPreview';
+import Logo from '../../components/Logo/Logo';
 
 const Home = () => {
-  const [showCard, setShowCard] = useState(false);
+  
 
   return (
     <main className="home-page">
       <section className="hero">
         <div className="hero-overlay" />
         <div className="hero-container">
-          <h1 className="hero-title">Influence des Dieux</h1>
-          <p className="hero-sub">Mythes antiques et design moderne — suivez les dieux.</p>
+          <h1 className="hero-title"><Logo className="logo-hero" src="/logo3.jpg" text="Influence of Gods" /></h1>
+          <p className="hero-sub">Ancient myths and modern design — follow the gods.</p>
           <div className="hero-actions">
-            <Link to="/rules" className="button primary">Lire les règles</Link>
-            <Link to="/dice" className="button secondary">Lancer le dé</Link>
+            <Link to="/rules" className="button primary">Read the rules</Link>
+            <Link to="/dice" className="button secondary">Roll the dice</Link>
           </div>
 
-          {/* Optional card preview toggle */}
-          <div className="hero-actions">
-            <button className="button secondary" onClick={() => setShowCard(!showCard)}>{showCard ? 'Cacher la DA' : 'Voir la DA'}</button>
-          </div>
-
-          {showCard && (
-            <div className="hero-art">
-              <CardPreview />
-            </div>
-          )}
         </div>
       </section>
 
       <section className="content intro">
         <div className="card">
-          <h2>À propos</h2>
+          <h2>About</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in
             risus non velit tincidunt facilisis. Integer porttitor arcu et tellus
@@ -41,11 +31,11 @@ const Home = () => {
           </p>
         </div>
         <div className="card">
-          <h2>Fonctionnalités</h2>
+          <h2>Features</h2>
           <ul>
-            <li>Design inspiré par l'antique</li>
-            <li>Animations modernes et interactions</li>
-            <li>Popup dé et page dédiée au dé</li>
+            <li>Design inspired by antiquity</li>
+            <li>Modern animations and interactions</li>
+            <li>Dice popup and dedicated dice page</li>
           </ul>
         </div>
       </section>

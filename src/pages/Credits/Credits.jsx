@@ -5,10 +5,11 @@ const Credits = () => {
   return (
     <main className="credits-page">
       <div className="container">
-        <h1>Crédits</h1>
-        <p>Design & dév: Lorem ipsum</p>
+        <h1>Credits</h1>
+        <p>Design: Lorem ipsum</p>
+        <p src="www.linkedin.com/in/marc-antoine-marie-6a132820a">dev: Marie Marc-Antoine</p>
         <p>Illustrations: Lorem ipsum</p>
-        <p>Merci aux contributeurs et aux playtesters.</p>
+        <p>Thanks to contributors and playtesters.</p>
       </div>
     </main>
   );

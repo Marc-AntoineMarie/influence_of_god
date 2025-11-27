@@ -53,12 +53,8 @@
 }
 
 .hero-title{
-  font-family: 'LOST LATE', 'Cinzel', serif;
-  font-size: clamp(46px, 8vw, 110px);
   color: var(--benediction);
   margin: 0 0 12px 0;
-  letter-spacing: 0.02em;
-  font-weight: 900;
 }
 
 .hero-sub{

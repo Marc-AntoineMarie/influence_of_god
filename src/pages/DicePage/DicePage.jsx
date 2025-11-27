@@ -6,10 +6,9 @@ const DicePage = () => {
   return (
     <main className="dice-page">
       <div className="container">
-        <h1>Dé</h1>
+        <h1>Dice</h1>
         <p>
-          Utilisez le dé ici, ou ouvrez le popup situé en bas à droite pour un
-          accès rapide.
+          Use the dice here, or open the popup at the bottom-right for quick access.
         </p>
         <div className="dice-center">
           <Dice />

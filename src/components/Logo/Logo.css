@@ -1,0 +1,13 @@
+.logo-root{display:flex;align-items:center;gap:10px}
+.logo-image{display:block;height:34px;width:auto;max-width:220px;opacity:0;transform:translateY(-2px);transition:opacity .18s ease, transform .18s ease}
+.logo-image.visible{opacity:1;transform:none}
+.logo-text.visible{opacity:1;visibility:visible}
+
+/* A small variant for compact nav use */
+.logo-root.compact .logo-image{height:24px}
+.logo-root.compact .logo-text{font-size:16px}
+
+/* hero specific sizing - add .logo-hero class to the component to use this */
+.logo-root.logo-hero{display:block;max-width:min(70vw,640px);width:100%;margin:0 auto}
+.logo-root.logo-hero .logo-image{height:auto;max-width:100%;width:70%;display:block;margin:0 auto;object-fit:cover;object-position:center}
+.logo-root.logo-hero .logo-text{font-size:clamp(46px, 8vw, 110px); font-weight:900}

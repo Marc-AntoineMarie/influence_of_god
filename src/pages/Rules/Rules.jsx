@@ -5,7 +5,7 @@ const Rules = () => {
   return (
     <main className="rules-page">
       <div className="container">
-        <h1>Règles du jeu</h1>
+        <h1>Game Rules</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
           semper nisl. Phasellus non lorem vel sapien gravida efficitur. Nullam
@@ -13,14 +13,14 @@ const Rules = () => {
           sapien, sed varius nibh arcu in libero.
         </p>
 
-        <h2>Déroulement</h2>
+        <h2>Gameplay</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           pharetra, ligula at dapibus auctor, elit dui feugiat neque, sed
           fermentum velit lorem et neque.
         </p>
 
-        <h3>Exemple:</h3>
+        <h3>Example:</h3>
         <ul>
           <li>Lorem ipsum dolor sit amet</li>
           <li>Consectetur adipiscing elit</li>
