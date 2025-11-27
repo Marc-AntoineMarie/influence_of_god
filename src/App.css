@@ -1,8 +1,10 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  padding-top: 120px; /* Space for floating navbar */
+  height: auto;
+  padding-top: 120px;
   background: var(--bg);
+  overflow-y: auto;
 }
 
 .App-logo {

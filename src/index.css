@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap');
 
+/* FIX SCROLL - Ajoute ces lignes */
+html, body, #root {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 :root{
   /* Updated color tokens according to your palette */
   --blanc: #eeeae8; /* light background */

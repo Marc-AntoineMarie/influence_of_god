@@ -4,7 +4,7 @@ import './Rules.css';
 const Rules = () => {
   return (
     <main className="rules-page">
-      <div className="container">
+      <div className="rules-container">
         <div className="header-section">
           <div className="decorative-line"></div>
           <h1>Game Rules</h1>
