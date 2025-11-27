@@ -8,7 +8,7 @@ const Credits = () => {
         <h1>Credits</h1>
 
         <div className="credit-section">
-          <span className="credit-label">Marketing</span>
+          <span className="credit-label">Design</span>
           <a 
             href="https://linktr.ee/ChloeHeurtebise" 
             target="_blank" 
@@ -44,7 +44,7 @@ const Credits = () => {
         </div>
         
          <div className="credit-section">
-          <span className="credit-label">Development</span>
+          <span className="credit-label">Editor</span>
           <a 
             href="https://www.linkedin.com/in/marc-antoine-marie-6a132820a" 
             target="_blank" 
